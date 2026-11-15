@@ -1,0 +1,14 @@
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\bin\Debug\net8.0\Esfiharia.exe
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\bin\Debug\net8.0\Esfiharia.deps.json
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\bin\Debug\net8.0\Esfiharia.runtimeconfig.json
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\bin\Debug\net8.0\Esfiharia.dll
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\bin\Debug\net8.0\Esfiharia.pdb
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\Esfiharia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\Esfiharia.AssemblyInfoInputs.cache
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\Esfiharia.AssemblyInfo.cs
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\Esfiharia.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\Esfiharia.dll
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\refint\Esfiharia.dll
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\Esfiharia.pdb
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\Esfiharia.genruntimeconfig.cache
+C:\Users\Gabriel Oliveira\Documents\Esfiharia\src\Esfiharia\obj\Debug\net8.0\ref\Esfiharia.dll
