@@ -6,7 +6,6 @@ public class Pedido
 
     public void Adicionar(int codigoEsfiha, int quantidade)
     {
-        // Card 02: só aceita quantidades inteiras maiores que zero (0 e negativos são rejeitados).
         if (quantidade <= 0)
             throw new ArgumentOutOfRangeException(nameof(quantidade), "Informe uma quantidade maior que zero.");
 
