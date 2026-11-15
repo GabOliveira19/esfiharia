@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Esfiharia/Esfiharia.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Esfiharia.Tests/Esfiharia.Tests.csproj" />
+  </Folder>
+</Solution>
