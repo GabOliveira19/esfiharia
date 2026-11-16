@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Esfiharia | Faça seu pedido</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Text&display=swap');
+#esfiharia-pedido {
+  color-scheme: light dark;
+  --e-paper: light-dark(#f8f5ed, #20221d);
+  --e-panel: light-dark(#fffdf7, #292b24);
+  --e-ink: light-dark(#262d22, #f3eddf);
+  --e-muted: light-dark(#5f675a, #b8b8a8);
+  --e-line: light-dark(#dfdbc9, #484a3b);
+  --e-leaf: light-dark(#1f392b, #223729);
+  --e-leaf-ink: #fff7e5;
+  --e-accent: light-dark(#a94026, #ffb093);
+  --e-tile: light-dark(#f6e5d4, #49352d);
+  --e-action: light-dark(#263e2e, #d9e5c5);
+  --e-action-text: light-dark(#fffdf5, #223427);
+  --e-selected: light-dark(#edf0e1, #384638);
+  --e-success: light-dark(#255839, #b5dfae);
+  font: 400 14px/1.45 "DM Sans", sans-serif;
+  padding: 14px;
+}
+#esfiharia-pedido *, #esfiharia-pedido *::before, #esfiharia-pedido *::after { box-sizing: border-box; }
+#esfiharia-pedido .e-shop { background: var(--e-paper); color: var(--e-ink); border: 1px solid var(--e-line); border-radius: 17px; overflow: hidden; }
+#esfiharia-pedido .e-brand { background: var(--e-leaf); color: var(--e-leaf-ink); display: flex; align-items: center; gap: 12px; padding: 18px 23px; }
+#esfiharia-pedido .e-mark { width: 39px; height: 39px; border-radius: 12px; background: #3c5640; color: #f8c087; display: grid; place-items: center; }
+#esfiharia-pedido .e-mark svg { width: 21px; height: 21px; }
+#esfiharia-pedido h1, #esfiharia-pedido h2, #esfiharia-pedido p { margin: 0; }
+#esfiharia-pedido h1, #esfiharia-pedido h2 { font-family: "DM Serif Text", Georgia, serif; font-weight: 400; color: inherit; line-height: 1.12; }
+#esfiharia-pedido h1 { font-size: 28px; }
+#esfiharia-pedido h2 { font-size: 23px; }
+#esfiharia-pedido .e-body { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); align-items: start; gap: 16px; padding: 19px; }
+#esfiharia-pedido .e-panel { background: var(--e-panel); border: 1px solid var(--e-line); padding: 17px; border-radius: 13px; min-width: 0; }
+#esfiharia-pedido .e-menu { list-style: none; padding: 5px 0 0; margin: 0; }
+#esfiharia-pedido .e-menu li { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; gap: 9px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--e-line); }
+#esfiharia-pedido .e-menu li:last-child { border-bottom: 0; padding-bottom: 0; }
+#esfiharia-pedido .e-item-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 9px; background: var(--e-tile); color: var(--e-accent); }
+#esfiharia-pedido .e-item-icon svg { width: 18px; height: 18px; }
+#esfiharia-pedido .e-item-name { display: block; font-weight: 700; }
+#esfiharia-pedido .e-price { color: var(--e-accent); font-weight: 600; font-size: 13px; white-space: nowrap; }
+#esfiharia-pedido .e-stepper { display: flex; align-items: center; border: 1px solid var(--e-line); border-radius: 9px; }
+#esfiharia-pedido button, #esfiharia-pedido select { font: inherit; }
+#esfiharia-pedido .e-stepper button { padding: 0; width: 32px; height: 34px; border: 0; border-radius: 7px; background: transparent; color: var(--e-ink); font-size: 17px; line-height: 1; }
+#esfiharia-pedido .e-stepper button:hover:enabled { background: var(--e-selected); }
+#esfiharia-pedido .e-stepper button:disabled { opacity: .38; }
+#esfiharia-pedido output { display: inline-block; text-align: center; min-width: 21px; font-weight: 600; font-variant-numeric: tabular-nums; }
+#esfiharia-pedido .e-choices { border: 0; padding: 0; margin: 12px 0 10px; min-width: 0; }
+#esfiharia-pedido .e-choices legend, #esfiharia-pedido .e-payment > span { font-weight: 700; display: block; margin: 0 0 5px; padding: 0; }
+#esfiharia-pedido .e-option-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+#esfiharia-pedido .e-option { display: flex; gap: 6px; align-items: center; min-height: 39px; padding: 6px 7px; border: 1px solid var(--e-line); border-radius: 8px; }
+#esfiharia-pedido .e-option:has(input:checked) { background: var(--e-selected); }
+#esfiharia-pedido .e-option input { margin: 0; accent-color: var(--e-success); }
+#esfiharia-pedido .e-note { font-size: 12px; color: var(--e-muted); margin-top: 5px; }
+#esfiharia-pedido .e-payment { display: block; }
+#esfiharia-pedido .e-payment select { width: 100%; min-height: 39px; background: var(--e-panel); color: var(--e-ink); border: 1px solid var(--e-line); border-radius: 8px; padding: 6px 9px; }
+#esfiharia-pedido .e-summary { margin: 11px 0 0; padding: 0; list-style: none; }
+#esfiharia-pedido .e-summary li, #esfiharia-pedido dl > div { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+#esfiharia-pedido .e-summary li { color: var(--e-muted); padding: 2px 0; font-size: 13px; }
+#esfiharia-pedido .e-summary li span:last-child, #esfiharia-pedido dd { white-space: nowrap; font-variant-numeric: tabular-nums; }
+#esfiharia-pedido dl { margin: 9px 0; padding-top: 7px; border-top: 1px solid var(--e-line); }
+#esfiharia-pedido dl > div { margin: 0 0 4px; }
+#esfiharia-pedido dd { margin: 0; }
+#esfiharia-pedido dl .e-total { margin-top: 7px; font-weight: 700; font-size: 17px; }
+#esfiharia-pedido .e-confirm { background: var(--e-action); color: var(--e-action-text); border: 0; border-radius: 9px; min-height: 42px; width: 100%; padding: 8px 11px; font-weight: 700; }
+#esfiharia-pedido .e-confirm:disabled { opacity: .47; }
+#esfiharia-pedido .e-status { color: var(--e-success); margin-top: 8px; font-weight: 600; }
+#esfiharia-pedido .e-status:empty { display: none; }
+@media (max-width: 590px) {
+  #esfiharia-pedido { padding: 8px; }
+  #esfiharia-pedido .e-body { grid-template-columns: 1fr; gap: 10px; padding: 11px; }
+  #esfiharia-pedido .e-brand { padding: 14px 15px; }
+  #esfiharia-pedido .e-panel { padding: 13px; }
+}
+@media (pointer: coarse) {
+  #esfiharia-pedido .e-stepper button { width: 44px; height: 44px; }
+  #esfiharia-pedido .e-option, #esfiharia-pedido .e-payment select, #esfiharia-pedido .e-confirm { min-height: 44px; }
+}
+
+:root { color-scheme: light dark; }
+body { margin: 0; background: light-dark(#efebe0, #181b16); }
+main { max-width: 920px; margin: 28px auto; }
+#esfiharia-pedido .cursor-interaction:not(:disabled) { cursor: pointer; }
+#esfiharia-pedido .e-mark i:empty::before { content: "✦"; }
+#esfiharia-pedido .e-item-icon i:empty::before { content: "•"; }
+
+@media (max-width: 590px) { main { margin: 8px auto; } }
+</style>
+<script defer src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js"></script>
+</head>
+<body>
+<main>
+<div id="esfiharia-pedido">
+  <section class="e-shop" aria-label="Esfiharia">
+    <header class="e-brand">
+      <span class="e-mark"><i data-lucide="flame" aria-hidden="true"></i></span>
+      <h1>Esfiharia</h1>
+    </header>
+    <div class="e-body">
+      <section class="e-panel" aria-labelledby="esfiharia-menu">
+        <h2 id="esfiharia-menu">Cardápio</h2>
+        <ul class="e-menu">
+          <li>
+            <span class="e-item-icon"><i data-lucide="beef" aria-hidden="true"></i></span>
+            <span><span class="e-item-name">Carne</span><span class="e-price">R$ 5,00</span></span>
+            <div class="e-stepper" role="group" aria-label="Quantidade de esfihas de carne">
+              <button type="button" class="cursor-interaction" data-item="0" data-step="-1" aria-label="Remover esfiha de carne">−</button>
+              <output data-count="0" aria-label="Esfihas de carne">4</output>
+              <button type="button" class="cursor-interaction" data-item="0" data-step="1" aria-label="Adicionar esfiha de carne">+</button>
+            </div>
+          </li>
+          <li>
+            <span class="e-item-icon"><i data-lucide="sandwich" aria-hidden="true"></i></span>
+            <span><span class="e-item-name">Queijo</span><span class="e-price">R$ 6,00</span></span>
+            <div class="e-stepper" role="group" aria-label="Quantidade de esfihas de queijo">
+              <button type="button" class="cursor-interaction" data-item="1" data-step="-1" aria-label="Remover esfiha de queijo">−</button>
+              <output data-count="1" aria-label="Esfihas de queijo">1</output>
+              <button type="button" class="cursor-interaction" data-item="1" data-step="1" aria-label="Adicionar esfiha de queijo">+</button>
+            </div>
+          </li>
+          <li>
+            <span class="e-item-icon"><i data-lucide="drumstick" aria-hidden="true"></i></span>
+            <span><span class="e-item-name">Frango</span><span class="e-price">R$ 7,00</span></span>
+            <div class="e-stepper" role="group" aria-label="Quantidade de esfihas de frango">
+              <button type="button" class="cursor-interaction" data-item="2" data-step="-1" aria-label="Remover esfiha de frango" disabled>−</button>
+              <output data-count="2" aria-label="Esfihas de frango">0</output>
+              <button type="button" class="cursor-interaction" data-item="2" data-step="1" aria-label="Adicionar esfiha de frango">+</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="e-panel" aria-labelledby="esfiharia-resumo">
+        <h2 id="esfiharia-resumo">Seu pedido</h2>
+        <ul class="e-summary" aria-label="Itens selecionados"></ul>
+        <fieldset class="e-choices">
+          <legend>Modalidade</legend>
+          <div class="e-option-row">
+            <label class="e-option"><input type="radio" name="esfiharia-modalidade" value="entrega" checked> Entrega</label>
+            <label class="e-option"><input type="radio" name="esfiharia-modalidade" value="retirada"> Retirada</label>
+          </div>
+          <div class="e-note">Entrega grátis a partir de R$ 30,00.</div>
+        </fieldset>
+        <label class="e-payment">
+          <span>Pagamento</span>
+          <select aria-label="Forma de pagamento">
+            <option value="pix">Pix</option>
+            <option value="cartao">Cartão</option>
+            <option value="dinheiro">Dinheiro</option>
+          </select>
+        </label>
+        <dl aria-live="polite" aria-atomic="true">
+          <div><dt>Subtotal</dt><dd data-subtotal>R$ 26,00</dd></div>
+          <div><dt>Taxa</dt><dd data-fee>R$ 6,00</dd></div>
+          <div class="e-total"><dt>Total</dt><dd data-total>R$ 32,00</dd></div>
+        </dl>
+        <button type="button" class="e-confirm cursor-interaction">Confirmar pedido</button>
+        <p class="e-status" role="status"></p>
+      </section>
+    </div>
+  </section>
+</div>
+<script>
+(() => {
+  const root = document.getElementById('esfiharia-pedido');
+  if (!root) return;
+
+  const items = [
+    { name: 'Carne', price: 500, amount: 4 },
+    { name: 'Queijo', price: 600, amount: 1 },
+    { name: 'Frango', price: 700, amount: 0 }
+  ];
+  const buttons = [...root.querySelectorAll('[data-step]')];
+  const counts = [...root.querySelectorAll('[data-count]')];
+  const choices = root.querySelector('.e-choices');
+  const payment = root.querySelector('select');
+  const summary = root.querySelector('.e-summary');
+  const confirm = root.querySelector('.e-confirm');
+  const status = root.querySelector('.e-status');
+  const subtotalOutput = root.querySelector('[data-subtotal]');
+  const feeOutput = root.querySelector('[data-fee]');
+  const totalOutput = root.querySelector('[data-total]');
+  const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  const money = cents => formatter.format(cents / 100);
+  let confirmed = false;
+
+  function render() {
+    const subtotal = items.reduce((sum, item) => sum + item.amount * item.price, 0);
+    const delivery = choices.querySelector('input:checked').value === 'entrega';
+    const fee = delivery && subtotal > 0 && subtotal < 3000 ? 600 : 0;
+
+    items.forEach((item, index) => {
+      counts[index].textContent = item.amount;
+    });
+
+    buttons.forEach(button => {
+      const item = items[Number(button.dataset.item)];
+      button.disabled = confirmed || (button.dataset.step === '-1' && item.amount === 0);
+    });
+
+    summary.replaceChildren();
+    items.filter(item => item.amount > 0).forEach(item => {
+      const row = document.createElement('li');
+      const name = document.createElement('span');
+      const value = document.createElement('span');
+      name.textContent = item.amount + ' × ' + item.name;
+      value.textContent = money(item.amount * item.price);
+      row.append(name, value);
+      summary.append(row);
+    });
+    if (!subtotal) {
+      const row = document.createElement('li');
+      row.textContent = 'Seu pedido está vazio.';
+      summary.append(row);
+    }
+
+    subtotalOutput.textContent = money(subtotal);
+    feeOutput.textContent = money(fee);
+    totalOutput.textContent = money(subtotal + fee);
+    choices.disabled = confirmed;
+    payment.disabled = confirmed;
+    confirm.disabled = !subtotal;
+    confirm.textContent = confirmed ? 'Novo pedido' : 'Confirmar pedido';
+    status.textContent = confirmed ? 'Pedido confirmado!' : '';
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const item = items[Number(button.dataset.item)];
+      item.amount += Number(button.dataset.step);
+      render();
+    });
+  });
+  choices.addEventListener('change', render);
+  confirm.addEventListener('click', () => {
+    if (confirmed) {
+      items.forEach(item => { item.amount = 0; });
+      choices.querySelector('input[value="entrega"]').checked = true;
+      payment.value = 'pix';
+      confirmed = false;
+      render();
+      buttons[1].focus();
+      return;
+    }
+    confirmed = true;
+    render();
+  });
+  render();
+})();
+</script>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  globalThis.lucide?.createIcons({ attrs: { 'aria-hidden': 'true' } });
+});
+</script>
+</body>
+</html>
