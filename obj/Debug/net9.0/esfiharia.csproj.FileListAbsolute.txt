@@ -1,0 +1,15 @@
+C:\Users\JONAS\Esfilharia.git\esfiharia\bin\Debug\net9.0\esfiharia.exe
+C:\Users\JONAS\Esfilharia.git\esfiharia\bin\Debug\net9.0\esfiharia.deps.json
+C:\Users\JONAS\Esfilharia.git\esfiharia\bin\Debug\net9.0\esfiharia.runtimeconfig.json
+C:\Users\JONAS\Esfilharia.git\esfiharia\bin\Debug\net9.0\esfiharia.dll
+C:\Users\JONAS\Esfilharia.git\esfiharia\bin\Debug\net9.0\esfiharia.pdb
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.AssemblyInfoInputs.cache
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.AssemblyInfo.cs
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.csproj.CoreCompileInputs.cache
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.sourcelink.json
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.dll
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\refint\esfiharia.dll
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.pdb
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\esfiharia.genruntimeconfig.cache
+C:\Users\JONAS\Esfilharia.git\esfiharia\obj\Debug\net9.0\ref\esfiharia.dll
