@@ -1,16 +1,14 @@
-﻿using Esfiharia;
+using System.Globalization;
+using Esfiharia;
 
-ConfirmacaoPedido pedido = new ConfirmacaoPedido();
+var brasil = CultureInfo.GetCultureInfo("pt-BR");
 
-Console.WriteLine("Pedido de R$ 26,00");
-Console.WriteLine("Digite o pagamento: pix, cartao ou dinheiro");
-string pagamento = Console.ReadLine() ?? "";
+// Consulta ao cardápio
+Esfiha esfiha = Cardapio.Buscar(1);
+Console.WriteLine($"Código 1: {esfiha.Sabor} por {esfiha.Preco.ToString("C2", brasil)}");
 
-if (pedido.Confirmar(26.00m, pagamento))
-{
-    Console.WriteLine("Pedido confirmado!");
-}
-else
-{
-    Console.WriteLine("Pedido recusado.");
-}
+// Subtotal do pedido
+var pedido = new Pedido();
+pedido.Adicionar(1, 4);
+pedido.Adicionar(2, 1);
+Console.WriteLine("Subtotal: " + pedido.CalcularSubtotal().ToString("C2", brasil));
