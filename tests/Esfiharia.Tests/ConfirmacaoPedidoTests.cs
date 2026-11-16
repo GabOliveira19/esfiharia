@@ -37,4 +37,17 @@ public class ConfirmacaoPedidoTests
         Assert.False(resultado);
         Assert.False(pedido.Confirmado);
     }
+
+    [Fact]
+public void NaoAdicionaEsfihaDepoisDeConfirmar()
+{
+    var pedido = new Pedido();
+    pedido.Adicionar(1, 4);
+    pedido.Adicionar(2, 1);
+
+    Assert.True(pedido.Confirmar("pix"));
+
+    Assert.Throws<InvalidOperationException>(() => pedido.Adicionar(1, 1));
+    Assert.Equal(26.00m, pedido.CalcularSubtotal());
+}
 }
